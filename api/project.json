@@ -1,0 +1,15 @@
+{
+  "name": "api",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "./api",
+  "targets": {
+    "build": {},
+    "serve": {},
+    "test": {
+      "command": "echo 'api does not test'"
+    },
+    "lint": {}
+  },
+  "tags": []
+}
