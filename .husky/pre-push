@@ -2,4 +2,4 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Nx affected test
-npm run test:affected
+npm run test:affected -- --base=HEAD~1
