@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option go_package = "github.com/AoiSatonaka/todo-app/grpc";
+
+package api.todo;
+
+import "google/protobuf/timestamp.proto";
+
+service ToDoService {
+  rpc List(ToDoListRequest) returns (ToDoListResponse);
+  rpc Get(ToDoGetRequest) returns (ToDo);
+  rpc Add(ToDoAddRequest) returns (ToDoListResponse);
+  rpc Update(ToDo) returns (ToDoListResponse);
+  rpc Delete(ToDoDeleteRequest) returns (ToDoListResponse);
+}
+
+message ToDoListRequest {}
+message ToDoListResponse {
+  repeated ToDo todos = 1;
+}
+
+message ToDoGetRequest {
+    int32 id = 1;
+}
+
+message ToDoAddRequest {
+    ToDo.Info info = 1;
+}
+
+message ToDoDeleteRequest {
+    int32 id = 1;
+}
+
+message ToDo {
+  message Info {
+    enum Priority{
+      PRIORITY_UNSPECIFIED = 0;
+      PRIORITY_LOW = 1;
+      PRIORITY_NORMAL_MIDDLE = 2;
+      PRIORITY_HIGH = 3;
+    }
+    
+    enum Status {
+      STATUS_UNSPECIFIED = 0;
+      STATUS_NOT_YET = 1;
+      STATUS_DOING = 2;
+      STATUS_DONE = 3;
+    }
+
+    string title = 1;
+    string description = 2;
+    google.protobuf.Timestamp limit = 3;
+    Priority priority = 4;
+    Status status = 5;
+    repeated string labels = 6;
+  }
+
+  int32 id = 1;
+  Info info = 2;
+}
+
+
+
+
+
