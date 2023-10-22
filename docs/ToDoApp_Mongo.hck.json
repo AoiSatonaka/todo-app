@@ -1,0 +1,243 @@
+{
+    "modelName": "ToDoApp",
+    "collections": [
+        {
+            "collectionName": "todo",
+            "type": "object",
+            "properties": [
+                {
+                    "name": "id",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "objectId",
+                    "error": {},
+                    "GUID": "d25ef4ae-2942-43e4-92da-1f40515501b1"
+                },
+                {
+                    "name": "uid",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "string",
+                    "GUID": "4d18e74f-7b3c-4163-b759-fc7e608c8971",
+                    "error": {}
+                },
+                {
+                    "name": "info",
+                    "hackoladeMeta": {},
+                    "isActivated": true,
+                    "type": "document",
+                    "properties": [
+                        {
+                            "name": "title",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "28932a95-0f56-4d38-a97f-e1df53188a09",
+                            "error": {}
+                        },
+                        {
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "21299a7d-3543-4892-9fb8-8c07fe8548fb",
+                            "name": "description",
+                            "error": {}
+                        },
+                        {
+                            "name": "limit",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "758a8df7-47cf-43e8-ad61-5c89091a6a9a",
+                            "error": {}
+                        },
+                        {
+                            "name": "priority",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "66f8a28d-bc35-42e1-8926-14b79674ec1a",
+                            "error": {}
+                        },
+                        {
+                            "name": "status",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "string",
+                            "GUID": "27e2a444-3445-46bb-a846-bf67fa9c97df",
+                            "error": {}
+                        },
+                        {
+                            "name": "labels",
+                            "hackoladeMeta": {},
+                            "isActivated": true,
+                            "type": "array",
+                            "properties": [
+                                {
+                                    "hackoladeMeta": {},
+                                    "isActivated": true,
+                                    "type": "string",
+                                    "GUID": "6d0229da-0a24-4c39-863f-1650d515f706",
+                                    "arrayItem": true
+                                }
+                            ],
+                            "additionalItems": true,
+                            "error": {},
+                            "GUID": "b08cbade-3bc8-430e-95ba-3cf05fa7cf48"
+                        }
+                    ],
+                    "additionalProperties": false,
+                    "error": {},
+                    "GUID": "ae7f52e6-1bdf-44d1-a92a-5f869087d96a"
+                }
+            ],
+            "definitions": {
+                "type": "definitions",
+                "properties": [],
+                "GUID": "feb4d202-2d21-41f7-8789-2bf1acb34d8c"
+            },
+            "isActivated": true,
+            "additionalProperties": false,
+            "validationLevel": "Off",
+            "validationAction": "Warn",
+            "storageEngineName": "WiredTiger",
+            "collectionUsers": [],
+            "indexes": [],
+            "collation": {},
+            "sharding": {
+                "unique": true,
+                "collation": "null"
+            },
+            "GUID": "64fd2519-b617-4d0f-9e52-699c830bfdd2",
+            "bucketId": "1d6233d4-d09e-4575-8a41-367f75010750"
+        }
+    ],
+    "buckets": [
+        {
+            "name": "ToDoDB",
+            "type": "bucket",
+            "collectionIds": [
+                "64fd2519-b617-4d0f-9e52-699c830bfdd2"
+            ],
+            "backgroundColor": {
+                "r": 216,
+                "g": 0,
+                "b": 115,
+                "a": 1
+            },
+            "show": true,
+            "isActivated": true,
+            "GUID": "1d6233d4-d09e-4575-8a41-367f75010750",
+            "hackoladeMeta": {}
+        }
+    ],
+    "views": [],
+    "relationships": [],
+    "users": [],
+    "diagramViews": [],
+    "idToNameHashTable": {
+        "1d6233d4-d09e-4575-8a41-367f75010750": "ToDoDB",
+        "64fd2519-b617-4d0f-9e52-699c830bfdd2": "todo",
+        "d25ef4ae-2942-43e4-92da-1f40515501b1": "id",
+        "4d18e74f-7b3c-4163-b759-fc7e608c8971": "uid",
+        "ae7f52e6-1bdf-44d1-a92a-5f869087d96a": "info",
+        "28932a95-0f56-4d38-a97f-e1df53188a09": "title",
+        "21299a7d-3543-4892-9fb8-8c07fe8548fb": "description",
+        "758a8df7-47cf-43e8-ad61-5c89091a6a9a": "limit",
+        "66f8a28d-bc35-42e1-8926-14b79674ec1a": "priority",
+        "27e2a444-3445-46bb-a846-bf67fa9c97df": "status",
+        "b08cbade-3bc8-430e-95ba-3cf05fa7cf48": "labels"
+    },
+    "definitions": {
+        "type": "definitions",
+        "properties": [],
+        "GUID": "4173f6c3-f02a-4790-8794-e4afd7e79a8e"
+    },
+    "polyglotDefinitions": {
+        "type": "polyglotDefinitions",
+        "properties": [],
+        "GUID": "2ff34b95-89d6-40f5-9d11-4543f1f2c847"
+    },
+    "externalDefinitions": {
+        "type": "externalDefinitions",
+        "properties": [],
+        "GUID": "28422acd-0573-4073-8c37-692514b901bc"
+    },
+    "sources": [],
+    "decorativeSymbols": [],
+    "dbVersion": "v7.x",
+    "dbVendor": "MongoDB",
+    "appTarget": "MONGODB",
+    "creationTS": "2023-10-21T07:27:01.537Z",
+    "GUID": "9003b904-0f97-4a31-bd2e-e4258e113431",
+    "isLineageEnabled": false,
+    "hackoladeMeta": {
+        "validationErrors": {
+            "modelName": false
+        }
+    },
+    "lastModifTS": "2023-10-21T11:05:43.256Z",
+    "persistenceSchemaVersion": "6",
+    "isCreatedByPlugin": true,
+    "pluginInformation": {
+        "pluginEngineVersion": "1.0.0"
+    },
+    "applicationInformation": {
+        "version": "6.11.6"
+    },
+    "settings": {
+        "centralPane": {
+            "dbLevel": {
+                "erd": [
+                    {
+                        "GUID": "64fd2519-b617-4d0f-9e52-699c830bfdd2",
+                        "x": 1171,
+                        "y": 1087,
+                        "width": 203,
+                        "height": 213,
+                        "color": {}
+                    }
+                ],
+                "erdDefinitions": {
+                    "erd": [],
+                    "rootPath": [],
+                    "entities": [],
+                    "decorativeSymbols": []
+                },
+                "buckets": [
+                    {
+                        "x": 1131,
+                        "y": 1047,
+                        "GUID": "1d6233d4-d09e-4575-8a41-367f75010750"
+                    }
+                ],
+                "collapsedNodes": [],
+                "activeRelationship": "",
+                "activeRelationshipFields": {
+                    "childField": [],
+                    "parentField": []
+                },
+                "selectedCollections": [],
+                "displayColorPicker": false,
+                "graphView": {
+                    "erd": [],
+                    "buckets": [],
+                    "decorativeSymbols": [],
+                    "forceLayout": true,
+                    "defaultLinkLength": 300
+                },
+                "diagramViews": [],
+                "decorativeSymbols": [],
+                "nestedCollectionsLayout": "horizontal",
+                "options": [],
+                "relationshipUpdateDisabled": false
+            },
+            "collectionLevel": {},
+            "changed": false
+        },
+        "dtDiagram": {
+            "collapsedNodes": [],
+            "shouldDistributeCollections": false
+        }
+    }
+}
