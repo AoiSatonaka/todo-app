@@ -28,12 +28,9 @@
       }
     },
     "build": {
-      "executor": "nx:run-commands",
+      "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
       "options": {
-        "cwd": "api",
-        "commands": [
-          "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh"
-        ]
+        "cwd": "api"
       }
     },
     "serve": {},
