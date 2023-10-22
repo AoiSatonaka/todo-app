@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  protoc:
+    build:
+      context: .
+      dockerfile: ./build/protoc/Dockerfile
+    working_dir: /usr/src/frontend/
+    volumes:
+      - ../:/usr/src/

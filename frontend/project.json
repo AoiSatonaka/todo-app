@@ -5,9 +5,17 @@
   "sourceRoot": "frontend/src",
   "tags": [],
   "targets": {
+    "protoc": {
+      "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
+      "options": {
+        "cwd": "frontend"
+      }
+    },
     "build": {
       "executor": "@nx/webpack:webpack",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "defaultConfiguration": "production",
       "options": {
         "outputPath": "dist/frontend",
@@ -15,10 +23,15 @@
         "main": "frontend/src/main.ts",
         "tsConfig": "frontend/tsconfig.app.json",
         "webpackConfig": "frontend/webpack.config.js",
-        "assets": ["frontend/src/favicon.ico", "frontend/src/assets"],
+        "assets": [
+          "frontend/src/favicon.ico",
+          "frontend/src/assets"
+        ],
         "index": "frontend/src/index.html",
         "baseHref": "/",
-        "styles": ["frontend/src/styles.scss"],
+        "styles": [
+          "frontend/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -51,14 +64,20 @@
     },
     "lint": {
       "executor": "@nx/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["frontend/**/*.ts"]
+        "lintFilePatterns": [
+          "frontend/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
-      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
       "options": {
         "jestConfig": "frontend/jest.config.ts",
         "passWithNoTests": true
