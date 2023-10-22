@@ -17,6 +17,7 @@ fi
 
 # protobuf build
 protoc \
+	-I $proto_file_dir \
 	--doc_out=$proto_out_dir \
 	--doc_opt="${proto_out_type},${proto_out_file}" \
 	$api_proto_files

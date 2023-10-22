@@ -36,7 +36,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [bytes](#bytes) |  |  |
 | info | [ToDo.Info](#api-todo-ToDo-Info) |  |  |
 
 

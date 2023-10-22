@@ -55,7 +55,7 @@ message ToDo {
     repeated string labels = 6;
   }
 
-  int32 id = 1;
+  bytes id = 1;
   Info info = 2;
 }
 
