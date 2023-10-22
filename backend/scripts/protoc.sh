@@ -2,7 +2,7 @@
 
 proto_file_dir='../api'
 api_proto_files=$(find ${proto_file_dir} -type f -name '*.proto')
-proto_out_dir='./grpc'
+proto_out_dir='./internal/grpc'
 
 # change working directory
 cd $(dirname $0)
@@ -10,7 +10,7 @@ cd ..
 
 # out dir exists check
 if [ ! -d $proto_out_dir ]; then
-	mkdir $proto_out_dir
+	mkdir -p $proto_out_dir
 fi
 
 # protobuf build
