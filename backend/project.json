@@ -4,8 +4,15 @@
   "projectType": "application",
   "sourceRoot": "./backend",
   "targets": {
+    "protoc": {
+      "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
+      "options": {
+        "cwd": "backend"
+      }
+    },
     "build": {
       "executor": "@nx-go/nx-go:build",
+      "dependsOn": [],
       "options": {
         "outputPath": "dist/backend",
         "main": "backend/main.go"
