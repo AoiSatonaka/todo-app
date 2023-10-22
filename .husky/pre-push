@@ -2,4 +2,5 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # Nx affected test
-npm run test:affected -- --base=HEAD~1
+target_branch="remotes/$(git rev-parse --abbrev-ref --symbolic-full-name @{u})"
+npm run test:affected -- --base=$(git rev-parse --short ${target_branch})
