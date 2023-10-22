@@ -11,7 +11,19 @@
         "commands": [
           "if ! type protoc-gen-go; then go install google.golang.org/protobuf/cmd/protoc-gen-go@1.31; fi",
           "if ! type protoc-gen-go-grpc; then go install google.golang.org/grpc/cmd protoc-gen-go-grpc@1.30; fi",
-          "if [ ! -d ../backend/grpc ]; then mkdir ../backend/grpc; fi"
+          "if [ ! -d ../backend/grpc ]; then mkdir ../backend/grpc; fi",
+          "if ! type protoc-gen-elm; then npm i -g protoc-gen-elm; fi",
+          "if [ ! -d ../frontend/src/grpc ]; then mkdir ../frontend/src/grpc; fi"
+        ],
+        "parallel": false
+      }
+    },
+    "build-x": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "api",
+        "commands": [
+          "protoc --elm_out=../frontend/src/grpc/ --go_out=../backend/grpc/ --go_opt=paths=source_relative --go-grpc_out=../backend/grpc/ --go-grpc_opt=paths=source_relative ./todo.proto"
         ]
       }
     },
@@ -20,7 +32,7 @@
       "options": {
         "cwd": "api",
         "commands": [
-          "protoc --go_out=../backend/grpc/ --go_opt=paths=source_relative --go-grpc_out=../backend/grpc/ --go-grpc_opt=paths=source_relative ./todo.proto"
+          "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh"
         ]
       }
     },
