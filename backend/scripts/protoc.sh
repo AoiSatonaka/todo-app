@@ -2,7 +2,7 @@
 
 proto_file_dir='../api'
 api_proto_files=$(find ${proto_file_dir} -type f -name '*.proto')
-proto_out_dir='./internal/grpc'
+proto_out_dir='./internal/presentation/grpc'
 
 # change working directory
 cd $(dirname $0)
