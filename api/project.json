@@ -4,20 +4,6 @@
   "projectType": "application",
   "sourceRoot": "./api",
   "targets": {
-    "init": {
-      "executor": "nx:run-commands",
-      "options": {
-        "cwd": "api",
-        "commands": [
-          "if ! type protoc-gen-go; then go install google.golang.org/protobuf/cmd/protoc-gen-go@1.31; fi",
-          "if ! type protoc-gen-go-grpc; then go install google.golang.org/grpc/cmd protoc-gen-go-grpc@1.30; fi",
-          "if [ ! -d ../backend/grpc ]; then mkdir ../backend/grpc; fi",
-          "if ! type protoc-gen-elm; then npm i -g protoc-gen-elm; fi",
-          "if [ ! -d ../frontend/src/grpc ]; then mkdir ../frontend/src/grpc; fi"
-        ],
-        "parallel": false
-      }
-    },
     "build-x": {
       "executor": "nx:run-commands",
       "options": {
@@ -27,12 +13,13 @@
         ]
       }
     },
-    "build": {
+    "protoc": {
       "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
       "options": {
         "cwd": "api"
       }
     },
+    "build": {},
     "serve": {},
     "test": {
       "command": "echo 'api does not test'"

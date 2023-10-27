@@ -148,7 +148,8 @@
   "scripts": {
     "prepare": "husky install",
     "test": "nx run-many -t test",
-    "test:affected": "nx affected -t test"
+    "test:affected": "nx affected -t test",
+    "protoc": "nx run-many -t protoc"
   },
   "nx": {
     "targets": {},
