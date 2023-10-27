@@ -1,8 +1,8 @@
 {
-    "modelName": "ToDoApp",
+    "modelName": "todo-app",
     "collections": [
         {
-            "collectionName": "todo",
+            "collectionName": "task",
             "type": "object",
             "properties": [
                 {
@@ -114,7 +114,7 @@
     ],
     "buckets": [
         {
-            "name": "ToDoDB",
+            "name": "todo-db",
             "type": "bucket",
             "collectionIds": [
                 "64fd2519-b617-4d0f-9e52-699c830bfdd2"
@@ -136,8 +136,8 @@
     "users": [],
     "diagramViews": [],
     "idToNameHashTable": {
-        "1d6233d4-d09e-4575-8a41-367f75010750": "ToDoDB",
-        "64fd2519-b617-4d0f-9e52-699c830bfdd2": "todo",
+        "1d6233d4-d09e-4575-8a41-367f75010750": "todo-db",
+        "64fd2519-b617-4d0f-9e52-699c830bfdd2": "task",
         "d25ef4ae-2942-43e4-92da-1f40515501b1": "id",
         "4d18e74f-7b3c-4163-b759-fc7e608c8971": "uid",
         "ae7f52e6-1bdf-44d1-a92a-5f869087d96a": "info",
@@ -169,14 +169,14 @@
     "dbVendor": "MongoDB",
     "appTarget": "MONGODB",
     "creationTS": "2023-10-21T07:27:01.537Z",
-    "GUID": "9003b904-0f97-4a31-bd2e-e4258e113431",
+    "GUID": "9c86deac-0e15-4fa1-a4f6-006602b0b536",
     "isLineageEnabled": false,
     "hackoladeMeta": {
         "validationErrors": {
             "modelName": false
         }
     },
-    "lastModifTS": "2023-10-21T11:05:43.256Z",
+    "lastModifTS": "2023-10-27T08:15:36.425Z",
     "persistenceSchemaVersion": "6",
     "isCreatedByPlugin": true,
     "pluginInformation": {
