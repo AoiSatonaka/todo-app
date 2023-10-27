@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "github.com/AoiSatonaka/todo-app/grpc";
 
-package api.task;
+package api;
 
 import "google/protobuf/timestamp.proto";
 
@@ -20,7 +20,7 @@ message TaskListResponse {
 }
 
 message TaskGetRequest {
-    int32 id = 1;
+    string id = 1;
 }
 
 message TaskAddRequest {
@@ -28,7 +28,7 @@ message TaskAddRequest {
 }
 
 message TaskDeleteRequest {
-    int32 id = 1;
+    string id = 1;
 }
 
 message Task {
@@ -54,8 +54,7 @@ message Task {
     Status status = 5;
     repeated string labels = 6;
   }
-
-  bytes id = 1;
+  string id = 1;
   Info info = 2;
 }
 

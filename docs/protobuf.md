@@ -4,18 +4,18 @@
 ## Table of Contents
 
 - [task.proto](#task-proto)
-    - [Task](#api-task-Task)
-    - [Task.Info](#api-task-Task-Info)
-    - [TaskAddRequest](#api-task-TaskAddRequest)
-    - [TaskDeleteRequest](#api-task-TaskDeleteRequest)
-    - [TaskGetRequest](#api-task-TaskGetRequest)
-    - [TaskListRequest](#api-task-TaskListRequest)
-    - [TaskListResponse](#api-task-TaskListResponse)
+    - [Task](#api-Task)
+    - [Task.Info](#api-Task-Info)
+    - [TaskAddRequest](#api-TaskAddRequest)
+    - [TaskDeleteRequest](#api-TaskDeleteRequest)
+    - [TaskGetRequest](#api-TaskGetRequest)
+    - [TaskListRequest](#api-TaskListRequest)
+    - [TaskListResponse](#api-TaskListResponse)
   
-    - [Task.Info.Priority](#api-task-Task-Info-Priority)
-    - [Task.Info.Status](#api-task-Task-Info-Status)
+    - [Task.Info.Priority](#api-Task-Info-Priority)
+    - [Task.Info.Status](#api-Task-Info-Status)
   
-    - [TaskService](#api-task-TaskService)
+    - [TaskService](#api-TaskService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -28,7 +28,7 @@
 
 
 
-<a name="api-task-Task"></a>
+<a name="api-Task"></a>
 
 ### Task
 
@@ -36,15 +36,15 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [bytes](#bytes) |  |  |
-| info | [Task.Info](#api-task-Task-Info) |  |  |
+| id | [string](#string) |  |  |
+| info | [Task.Info](#api-Task-Info) |  |  |
 
 
 
 
 
 
-<a name="api-task-Task-Info"></a>
+<a name="api-Task-Info"></a>
 
 ### Task.Info
 
@@ -55,8 +55,8 @@
 | title | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | limit | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| priority | [Task.Info.Priority](#api-task-Task-Info-Priority) |  |  |
-| status | [Task.Info.Status](#api-task-Task-Info-Status) |  |  |
+| priority | [Task.Info.Priority](#api-Task-Info-Priority) |  |  |
+| status | [Task.Info.Status](#api-Task-Info-Status) |  |  |
 | labels | [string](#string) | repeated |  |
 
 
@@ -64,7 +64,7 @@
 
 
 
-<a name="api-task-TaskAddRequest"></a>
+<a name="api-TaskAddRequest"></a>
 
 ### TaskAddRequest
 
@@ -72,14 +72,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| info | [Task.Info](#api-task-Task-Info) |  |  |
+| info | [Task.Info](#api-Task-Info) |  |  |
 
 
 
 
 
 
-<a name="api-task-TaskDeleteRequest"></a>
+<a name="api-TaskDeleteRequest"></a>
 
 ### TaskDeleteRequest
 
@@ -87,14 +87,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="api-task-TaskGetRequest"></a>
+<a name="api-TaskGetRequest"></a>
 
 ### TaskGetRequest
 
@@ -102,14 +102,14 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| id | [string](#string) |  |  |
 
 
 
 
 
 
-<a name="api-task-TaskListRequest"></a>
+<a name="api-TaskListRequest"></a>
 
 ### TaskListRequest
 
@@ -119,7 +119,7 @@
 
 
 
-<a name="api-task-TaskListResponse"></a>
+<a name="api-TaskListResponse"></a>
 
 ### TaskListResponse
 
@@ -127,7 +127,7 @@
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| tasks | [Task](#api-task-Task) | repeated |  |
+| tasks | [Task](#api-Task) | repeated |  |
 
 
 
@@ -136,7 +136,7 @@
  
 
 
-<a name="api-task-Task-Info-Priority"></a>
+<a name="api-Task-Info-Priority"></a>
 
 ### Task.Info.Priority
 
@@ -150,7 +150,7 @@
 
 
 
-<a name="api-task-Task-Info-Status"></a>
+<a name="api-Task-Info-Status"></a>
 
 ### Task.Info.Status
 
@@ -168,18 +168,18 @@
  
 
 
-<a name="api-task-TaskService"></a>
+<a name="api-TaskService"></a>
 
 ### TaskService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| List | [TaskListRequest](#api-task-TaskListRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
-| Get | [TaskGetRequest](#api-task-TaskGetRequest) | [Task](#api-task-Task) |  |
-| Add | [TaskAddRequest](#api-task-TaskAddRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
-| Update | [Task](#api-task-Task) | [TaskListResponse](#api-task-TaskListResponse) |  |
-| Delete | [TaskDeleteRequest](#api-task-TaskDeleteRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
+| List | [TaskListRequest](#api-TaskListRequest) | [TaskListResponse](#api-TaskListResponse) |  |
+| Get | [TaskGetRequest](#api-TaskGetRequest) | [Task](#api-Task) |  |
+| Add | [TaskAddRequest](#api-TaskAddRequest) | [TaskListResponse](#api-TaskListResponse) |  |
+| Update | [Task](#api-Task) | [TaskListResponse](#api-TaskListResponse) |  |
+| Delete | [TaskDeleteRequest](#api-TaskDeleteRequest) | [TaskListResponse](#api-TaskListResponse) |  |
 
  
 
