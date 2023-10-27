@@ -3,50 +3,50 @@
 
 ## Table of Contents
 
-- [todo.proto](#todo-proto)
-    - [ToDo](#api-todo-ToDo)
-    - [ToDo.Info](#api-todo-ToDo-Info)
-    - [ToDoAddRequest](#api-todo-ToDoAddRequest)
-    - [ToDoDeleteRequest](#api-todo-ToDoDeleteRequest)
-    - [ToDoGetRequest](#api-todo-ToDoGetRequest)
-    - [ToDoListRequest](#api-todo-ToDoListRequest)
-    - [ToDoListResponse](#api-todo-ToDoListResponse)
+- [task.proto](#task-proto)
+    - [Task](#api-task-Task)
+    - [Task.Info](#api-task-Task-Info)
+    - [TaskAddRequest](#api-task-TaskAddRequest)
+    - [TaskDeleteRequest](#api-task-TaskDeleteRequest)
+    - [TaskGetRequest](#api-task-TaskGetRequest)
+    - [TaskListRequest](#api-task-TaskListRequest)
+    - [TaskListResponse](#api-task-TaskListResponse)
   
-    - [ToDo.Info.Priority](#api-todo-ToDo-Info-Priority)
-    - [ToDo.Info.Status](#api-todo-ToDo-Info-Status)
+    - [Task.Info.Priority](#api-task-Task-Info-Priority)
+    - [Task.Info.Status](#api-task-Task-Info-Status)
   
-    - [ToDoService](#api-todo-ToDoService)
+    - [TaskService](#api-task-TaskService)
   
 - [Scalar Value Types](#scalar-value-types)
 
 
 
-<a name="todo-proto"></a>
+<a name="task-proto"></a>
 <p align="right"><a href="#top">Top</a></p>
 
-## todo.proto
+## task.proto
 
 
 
-<a name="api-todo-ToDo"></a>
+<a name="api-task-Task"></a>
 
-### ToDo
+### Task
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [bytes](#bytes) |  |  |
-| info | [ToDo.Info](#api-todo-ToDo-Info) |  |  |
+| info | [Task.Info](#api-task-Task-Info) |  |  |
 
 
 
 
 
 
-<a name="api-todo-ToDo-Info"></a>
+<a name="api-task-Task-Info"></a>
 
-### ToDo.Info
+### Task.Info
 
 
 
@@ -55,8 +55,8 @@
 | title | [string](#string) |  |  |
 | description | [string](#string) |  |  |
 | limit | [google.protobuf.Timestamp](#google-protobuf-Timestamp) |  |  |
-| priority | [ToDo.Info.Priority](#api-todo-ToDo-Info-Priority) |  |  |
-| status | [ToDo.Info.Status](#api-todo-ToDo-Info-Status) |  |  |
+| priority | [Task.Info.Priority](#api-task-Task-Info-Priority) |  |  |
+| status | [Task.Info.Status](#api-task-Task-Info-Status) |  |  |
 | labels | [string](#string) | repeated |  |
 
 
@@ -64,39 +64,24 @@
 
 
 
-<a name="api-todo-ToDoAddRequest"></a>
+<a name="api-task-TaskAddRequest"></a>
 
-### ToDoAddRequest
-
-
-
-| Field | Type | Label | Description |
-| ----- | ---- | ----- | ----------- |
-| info | [ToDo.Info](#api-todo-ToDo-Info) |  |  |
-
-
-
-
-
-
-<a name="api-todo-ToDoDeleteRequest"></a>
-
-### ToDoDeleteRequest
+### TaskAddRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| id | [int32](#int32) |  |  |
+| info | [Task.Info](#api-task-Task-Info) |  |  |
 
 
 
 
 
 
-<a name="api-todo-ToDoGetRequest"></a>
+<a name="api-task-TaskDeleteRequest"></a>
 
-### ToDoGetRequest
+### TaskDeleteRequest
 
 
 
@@ -109,25 +94,40 @@
 
 
 
-<a name="api-todo-ToDoListRequest"></a>
+<a name="api-task-TaskGetRequest"></a>
 
-### ToDoListRequest
-
-
-
-
-
-
-
-<a name="api-todo-ToDoListResponse"></a>
-
-### ToDoListResponse
+### TaskGetRequest
 
 
 
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
-| todos | [ToDo](#api-todo-ToDo) | repeated |  |
+| id | [int32](#int32) |  |  |
+
+
+
+
+
+
+<a name="api-task-TaskListRequest"></a>
+
+### TaskListRequest
+
+
+
+
+
+
+
+<a name="api-task-TaskListResponse"></a>
+
+### TaskListResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tasks | [Task](#api-task-Task) | repeated |  |
 
 
 
@@ -136,9 +136,9 @@
  
 
 
-<a name="api-todo-ToDo-Info-Priority"></a>
+<a name="api-task-Task-Info-Priority"></a>
 
-### ToDo.Info.Priority
+### Task.Info.Priority
 
 
 | Name | Number | Description |
@@ -150,9 +150,9 @@
 
 
 
-<a name="api-todo-ToDo-Info-Status"></a>
+<a name="api-task-Task-Info-Status"></a>
 
-### ToDo.Info.Status
+### Task.Info.Status
 
 
 | Name | Number | Description |
@@ -168,18 +168,18 @@
  
 
 
-<a name="api-todo-ToDoService"></a>
+<a name="api-task-TaskService"></a>
 
-### ToDoService
+### TaskService
 
 
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
-| List | [ToDoListRequest](#api-todo-ToDoListRequest) | [ToDoListResponse](#api-todo-ToDoListResponse) |  |
-| Get | [ToDoGetRequest](#api-todo-ToDoGetRequest) | [ToDo](#api-todo-ToDo) |  |
-| Add | [ToDoAddRequest](#api-todo-ToDoAddRequest) | [ToDoListResponse](#api-todo-ToDoListResponse) |  |
-| Update | [ToDo](#api-todo-ToDo) | [ToDoListResponse](#api-todo-ToDoListResponse) |  |
-| Delete | [ToDoDeleteRequest](#api-todo-ToDoDeleteRequest) | [ToDoListResponse](#api-todo-ToDoListResponse) |  |
+| List | [TaskListRequest](#api-task-TaskListRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
+| Get | [TaskGetRequest](#api-task-TaskGetRequest) | [Task](#api-task-Task) |  |
+| Add | [TaskAddRequest](#api-task-TaskAddRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
+| Update | [Task](#api-task-Task) | [TaskListResponse](#api-task-TaskListResponse) |  |
+| Delete | [TaskDeleteRequest](#api-task-TaskDeleteRequest) | [TaskListResponse](#api-task-TaskListResponse) |  |
 
  
 

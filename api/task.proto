@@ -2,36 +2,36 @@ syntax = "proto3";
 
 option go_package = "github.com/AoiSatonaka/todo-app/grpc";
 
-package api.todo;
+package api.task;
 
 import "google/protobuf/timestamp.proto";
 
-service ToDoService {
-  rpc List(ToDoListRequest) returns (ToDoListResponse);
-  rpc Get(ToDoGetRequest) returns (ToDo);
-  rpc Add(ToDoAddRequest) returns (ToDoListResponse);
-  rpc Update(ToDo) returns (ToDoListResponse);
-  rpc Delete(ToDoDeleteRequest) returns (ToDoListResponse);
+service TaskService {
+  rpc List(TaskListRequest) returns (TaskListResponse);
+  rpc Get(TaskGetRequest) returns (Task);
+  rpc Add(TaskAddRequest) returns (TaskListResponse);
+  rpc Update(Task) returns (TaskListResponse);
+  rpc Delete(TaskDeleteRequest) returns (TaskListResponse);
 }
 
-message ToDoListRequest {}
-message ToDoListResponse {
-  repeated ToDo todos = 1;
+message TaskListRequest {}
+message TaskListResponse {
+  repeated Task tasks = 1;
 }
 
-message ToDoGetRequest {
+message TaskGetRequest {
     int32 id = 1;
 }
 
-message ToDoAddRequest {
-    ToDo.Info info = 1;
+message TaskAddRequest {
+    Task.Info info = 1;
 }
 
-message ToDoDeleteRequest {
+message TaskDeleteRequest {
     int32 id = 1;
 }
 
-message ToDo {
+message Task {
   message Info {
     enum Priority{
       PRIORITY_UNSPECIFIED = 0;
@@ -58,8 +58,4 @@ message ToDo {
   bytes id = 1;
   Info info = 2;
 }
-
-
-
-
 
