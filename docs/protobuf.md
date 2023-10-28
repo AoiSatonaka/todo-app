@@ -145,7 +145,7 @@
 | ---- | ------ | ----------- |
 | PRIORITY_UNSPECIFIED | 0 |  |
 | PRIORITY_LOW | 1 |  |
-| PRIORITY_NORMAL_MIDDLE | 2 |  |
+| PRIORITY_MIDDLE | 2 |  |
 | PRIORITY_HIGH | 3 |  |
 
 
@@ -158,7 +158,7 @@
 | Name | Number | Description |
 | ---- | ------ | ----------- |
 | STATUS_UNSPECIFIED | 0 |  |
-| STATUS_NOT_YET | 1 |  |
+| STATUS_TODO | 1 |  |
 | STATUS_DOING | 2 |  |
 | STATUS_DONE | 3 |  |
 

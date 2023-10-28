@@ -400,7 +400,7 @@ encodeProto__Api__Task__Info__Status value =
             Proto__Api__Task__Info__STATUSUNSPECIFIED ->
                 0
 
-            Proto__Api__Task__Info__STATUSNOTYET ->
+            Proto__Api__Task__Info__STATUSTODO ->
                 1
 
             Proto__Api__Task__Info__STATUSDOING ->
@@ -427,7 +427,7 @@ decodeProto__Api__Task__Info__Status =
                         Proto__Api__Task__Info__STATUSUNSPECIFIED
 
                     1 ->
-                        Proto__Api__Task__Info__STATUSNOTYET
+                        Proto__Api__Task__Info__STATUSTODO
 
                     2 ->
                         Proto__Api__Task__Info__STATUSDOING
@@ -446,7 +446,7 @@ decodeProto__Api__Task__Info__Status =
 -}
 type Proto__Api__Task__Info__Status
     = Proto__Api__Task__Info__STATUSUNSPECIFIED
-    | Proto__Api__Task__Info__STATUSNOTYET
+    | Proto__Api__Task__Info__STATUSTODO
     | Proto__Api__Task__Info__STATUSDOING
     | Proto__Api__Task__Info__STATUSDONE
     | Proto__Api__Task__Info__StatusUnrecognized_ Int
@@ -475,7 +475,7 @@ encodeProto__Api__Task__Info__Priority value =
             Proto__Api__Task__Info__PRIORITYLOW ->
                 1
 
-            Proto__Api__Task__Info__PRIORITYNORMALMIDDLE ->
+            Proto__Api__Task__Info__PRIORITYMIDDLE ->
                 2
 
             Proto__Api__Task__Info__PRIORITYHIGH ->
@@ -502,7 +502,7 @@ decodeProto__Api__Task__Info__Priority =
                         Proto__Api__Task__Info__PRIORITYLOW
 
                     2 ->
-                        Proto__Api__Task__Info__PRIORITYNORMALMIDDLE
+                        Proto__Api__Task__Info__PRIORITYMIDDLE
 
                     3 ->
                         Proto__Api__Task__Info__PRIORITYHIGH
@@ -519,6 +519,6 @@ decodeProto__Api__Task__Info__Priority =
 type Proto__Api__Task__Info__Priority
     = Proto__Api__Task__Info__PRIORITYUNSPECIFIED
     | Proto__Api__Task__Info__PRIORITYLOW
-    | Proto__Api__Task__Info__PRIORITYNORMALMIDDLE
+    | Proto__Api__Task__Info__PRIORITYMIDDLE
     | Proto__Api__Task__Info__PRIORITYHIGH
     | Proto__Api__Task__Info__PriorityUnrecognized_ Int

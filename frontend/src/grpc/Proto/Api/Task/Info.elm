@@ -30,7 +30,7 @@ fieldNumbersStatus n_ =
         STATUSUNSPECIFIED ->
             0
 
-        STATUSNOTYET ->
+        STATUSTODO ->
             1
 
         STATUSDOING ->
@@ -65,8 +65,8 @@ toInternalStatus data_ =
         STATUSUNSPECIFIED ->
             Proto.Api.Internals_.Proto__Api__Task__Info__STATUSUNSPECIFIED
 
-        STATUSNOTYET ->
-            Proto.Api.Internals_.Proto__Api__Task__Info__STATUSNOTYET
+        STATUSTODO ->
+            Proto.Api.Internals_.Proto__Api__Task__Info__STATUSTODO
 
         STATUSDOING ->
             Proto.Api.Internals_.Proto__Api__Task__Info__STATUSDOING
@@ -91,8 +91,8 @@ fromInternalStatus data_ =
         Proto.Api.Internals_.Proto__Api__Task__Info__STATUSUNSPECIFIED ->
             STATUSUNSPECIFIED
 
-        Proto.Api.Internals_.Proto__Api__Task__Info__STATUSNOTYET ->
-            STATUSNOTYET
+        Proto.Api.Internals_.Proto__Api__Task__Info__STATUSTODO ->
+            STATUSTODO
 
         Proto.Api.Internals_.Proto__Api__Task__Info__STATUSDOING ->
             STATUSDOING
@@ -128,7 +128,7 @@ decodeStatus =
 -}
 type Status
     = STATUSUNSPECIFIED
-    | STATUSNOTYET
+    | STATUSTODO
     | STATUSDOING
     | STATUSDONE
     | StatusUnrecognized_ Int
@@ -147,7 +147,7 @@ fieldNumbersPriority n_ =
         PRIORITYLOW ->
             1
 
-        PRIORITYNORMALMIDDLE ->
+        PRIORITYMIDDLE ->
             2
 
         PRIORITYHIGH ->
@@ -182,8 +182,8 @@ toInternalPriority data_ =
         PRIORITYLOW ->
             Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYLOW
 
-        PRIORITYNORMALMIDDLE ->
-            Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYNORMALMIDDLE
+        PRIORITYMIDDLE ->
+            Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYMIDDLE
 
         PRIORITYHIGH ->
             Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYHIGH
@@ -208,8 +208,8 @@ fromInternalPriority data_ =
         Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYLOW ->
             PRIORITYLOW
 
-        Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYNORMALMIDDLE ->
-            PRIORITYNORMALMIDDLE
+        Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYMIDDLE ->
+            PRIORITYMIDDLE
 
         Proto.Api.Internals_.Proto__Api__Task__Info__PRIORITYHIGH ->
             PRIORITYHIGH
@@ -243,6 +243,6 @@ decodePriority =
 type Priority
     = PRIORITYUNSPECIFIED
     | PRIORITYLOW
-    | PRIORITYNORMALMIDDLE
+    | PRIORITYMIDDLE
     | PRIORITYHIGH
     | PriorityUnrecognized_ Int
