@@ -9,7 +9,7 @@ import "google/protobuf/timestamp.proto";
 service TaskService {
   rpc List(TaskListRequest) returns (TaskListResponse);
   rpc Get(TaskGetRequest) returns (Task);
-  rpc Add(TaskAddRequest) returns (TaskListResponse);
+  rpc Create(TaskCreateRequest) returns (TaskListResponse);
   rpc Update(Task) returns (TaskListResponse);
   rpc Delete(TaskDeleteRequest) returns (TaskListResponse);
 }
@@ -23,7 +23,7 @@ message TaskGetRequest {
     string id = 1;
 }
 
-message TaskAddRequest {
+message TaskCreateRequest {
     Task.Info info = 1;
 }
 

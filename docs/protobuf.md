@@ -6,7 +6,7 @@
 - [task.proto](#task-proto)
     - [Task](#api-Task)
     - [Task.Info](#api-Task-Info)
-    - [TaskAddRequest](#api-TaskAddRequest)
+    - [TaskCreateRequest](#api-TaskCreateRequest)
     - [TaskDeleteRequest](#api-TaskDeleteRequest)
     - [TaskGetRequest](#api-TaskGetRequest)
     - [TaskListRequest](#api-TaskListRequest)
@@ -64,9 +64,9 @@
 
 
 
-<a name="api-TaskAddRequest"></a>
+<a name="api-TaskCreateRequest"></a>
 
-### TaskAddRequest
+### TaskCreateRequest
 
 
 
@@ -177,7 +177,7 @@
 | ----------- | ------------ | ------------- | ------------|
 | List | [TaskListRequest](#api-TaskListRequest) | [TaskListResponse](#api-TaskListResponse) |  |
 | Get | [TaskGetRequest](#api-TaskGetRequest) | [Task](#api-Task) |  |
-| Add | [TaskAddRequest](#api-TaskAddRequest) | [TaskListResponse](#api-TaskListResponse) |  |
+| Create | [TaskCreateRequest](#api-TaskCreateRequest) | [TaskListResponse](#api-TaskListResponse) |  |
 | Update | [Task](#api-Task) | [TaskListResponse](#api-TaskListResponse) |  |
 | Delete | [TaskDeleteRequest](#api-TaskDeleteRequest) | [TaskListResponse](#api-TaskListResponse) |  |
 

@@ -196,51 +196,51 @@ type alias Proto__Api__TaskDeleteRequest =
     { id : String }
 
 
-{-| The field numbers for the fields of `Proto__Api__TaskAddRequest`. This is mostly useful for internals, like documentation generation.
+{-| The field numbers for the fields of `Proto__Api__TaskCreateRequest`. This is mostly useful for internals, like documentation generation.
 
 
 -}
-fieldNumbersProto__Api__TaskAddRequest : { info : Int }
-fieldNumbersProto__Api__TaskAddRequest =
+fieldNumbersProto__Api__TaskCreateRequest : { info : Int }
+fieldNumbersProto__Api__TaskCreateRequest =
     { info = 1 }
 
 
-{-| Default for Proto__Api__TaskAddRequest. Should only be used for 'required' decoders as an initial value.
+{-| Default for Proto__Api__TaskCreateRequest. Should only be used for 'required' decoders as an initial value.
 
 
 -}
-defaultProto__Api__TaskAddRequest : Proto__Api__TaskAddRequest
-defaultProto__Api__TaskAddRequest =
+defaultProto__Api__TaskCreateRequest : Proto__Api__TaskCreateRequest
+defaultProto__Api__TaskCreateRequest =
     { info = Nothing }
 
 
-{-| Declares how to decode a `Proto__Api__TaskAddRequest` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
+{-| Declares how to decode a `Proto__Api__TaskCreateRequest` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
 
 
 -}
-decodeProto__Api__TaskAddRequest : Protobuf.Decode.Decoder Proto__Api__TaskAddRequest
-decodeProto__Api__TaskAddRequest =
+decodeProto__Api__TaskCreateRequest : Protobuf.Decode.Decoder Proto__Api__TaskCreateRequest
+decodeProto__Api__TaskCreateRequest =
     Protobuf.Decode.message
-        defaultProto__Api__TaskAddRequest
+        defaultProto__Api__TaskCreateRequest
         [ Protobuf.Decode.optional 1 (Protobuf.Decode.map Just decodeProto__Api__Task__Info) (\a r -> { r | info = a })
         ]
 
 
-{-| Declares how to encode a `Proto__Api__TaskAddRequest` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
+{-| Declares how to encode a `Proto__Api__TaskCreateRequest` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
 
 
 -}
-encodeProto__Api__TaskAddRequest : Proto__Api__TaskAddRequest -> Protobuf.Encode.Encoder
-encodeProto__Api__TaskAddRequest value =
+encodeProto__Api__TaskCreateRequest : Proto__Api__TaskCreateRequest -> Protobuf.Encode.Encoder
+encodeProto__Api__TaskCreateRequest value =
     Protobuf.Encode.message
         [ ( 1, (Maybe.map encodeProto__Api__Task__Info >> Maybe.withDefault Protobuf.Encode.none) value.info ) ]
 
 
-{-| `Proto__Api__TaskAddRequest` message
+{-| `Proto__Api__TaskCreateRequest` message
 
 
 -}
-type alias Proto__Api__TaskAddRequest =
+type alias Proto__Api__TaskCreateRequest =
     { info : Maybe Proto__Api__Task__Info }
 
 
