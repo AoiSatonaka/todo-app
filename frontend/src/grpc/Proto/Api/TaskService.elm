@@ -18,63 +18,63 @@ import Grpc.Internal
 import Proto.Api
 
 
-{-| A template for a gRPC call to the method 'Delete' sending a `TaskDeleteRequest` to get back a `TaskListResponse`.
+{-| A template for a gRPC call to the method 'Delete' sending a `TaskDeleteRequest` to get back a `TaskDeleteResponse`.
 
 
 -}
-delete : Grpc.Internal.Rpc Proto.Api.TaskDeleteRequest Proto.Api.TaskListResponse
+delete : Grpc.Internal.Rpc Proto.Api.TaskDeleteRequest Proto.Api.TaskDeleteResponse
 delete =
     Grpc.Internal.Rpc
         { service = "TaskService"
         , package = "api"
         , rpcName = "Delete"
         , encoder = Proto.Api.encodeTaskDeleteRequest
-        , decoder = Proto.Api.decodeTaskListResponse
+        , decoder = Proto.Api.decodeTaskDeleteResponse
         }
 
 
-{-| A template for a gRPC call to the method 'Update' sending a `Task` to get back a `TaskListResponse`.
+{-| A template for a gRPC call to the method 'Update' sending a `TaskUpdateRequest` to get back a `TaskUpdateResponse`.
 
 
 -}
-update : Grpc.Internal.Rpc Proto.Api.Task Proto.Api.TaskListResponse
+update : Grpc.Internal.Rpc Proto.Api.TaskUpdateRequest Proto.Api.TaskUpdateResponse
 update =
     Grpc.Internal.Rpc
         { service = "TaskService"
         , package = "api"
         , rpcName = "Update"
-        , encoder = Proto.Api.encodeTask
-        , decoder = Proto.Api.decodeTaskListResponse
+        , encoder = Proto.Api.encodeTaskUpdateRequest
+        , decoder = Proto.Api.decodeTaskUpdateResponse
         }
 
 
-{-| A template for a gRPC call to the method 'Create' sending a `TaskCreateRequest` to get back a `TaskListResponse`.
+{-| A template for a gRPC call to the method 'Create' sending a `TaskCreateRequest` to get back a `TaskCreateResponse`.
 
 
 -}
-create : Grpc.Internal.Rpc Proto.Api.TaskCreateRequest Proto.Api.TaskListResponse
+create : Grpc.Internal.Rpc Proto.Api.TaskCreateRequest Proto.Api.TaskCreateResponse
 create =
     Grpc.Internal.Rpc
         { service = "TaskService"
         , package = "api"
         , rpcName = "Create"
         , encoder = Proto.Api.encodeTaskCreateRequest
-        , decoder = Proto.Api.decodeTaskListResponse
+        , decoder = Proto.Api.decodeTaskCreateResponse
         }
 
 
-{-| A template for a gRPC call to the method 'Get' sending a `TaskGetRequest` to get back a `Task`.
+{-| A template for a gRPC call to the method 'Get' sending a `TaskGetRequest` to get back a `TaskGetResponse`.
 
 
 -}
-get : Grpc.Internal.Rpc Proto.Api.TaskGetRequest Proto.Api.Task
+get : Grpc.Internal.Rpc Proto.Api.TaskGetRequest Proto.Api.TaskGetResponse
 get =
     Grpc.Internal.Rpc
         { service = "TaskService"
         , package = "api"
         , rpcName = "Get"
         , encoder = Proto.Api.encodeTaskGetRequest
-        , decoder = Proto.Api.decodeTask
+        , decoder = Proto.Api.decodeTaskGetResponse
         }
 
 

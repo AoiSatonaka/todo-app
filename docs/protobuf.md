@@ -7,10 +7,15 @@
     - [Task](#api-Task)
     - [Task.Info](#api-Task-Info)
     - [TaskCreateRequest](#api-TaskCreateRequest)
+    - [TaskCreateResponse](#api-TaskCreateResponse)
     - [TaskDeleteRequest](#api-TaskDeleteRequest)
+    - [TaskDeleteResponse](#api-TaskDeleteResponse)
     - [TaskGetRequest](#api-TaskGetRequest)
+    - [TaskGetResponse](#api-TaskGetResponse)
     - [TaskListRequest](#api-TaskListRequest)
     - [TaskListResponse](#api-TaskListResponse)
+    - [TaskUpdateRequest](#api-TaskUpdateRequest)
+    - [TaskUpdateResponse](#api-TaskUpdateResponse)
   
     - [Task.Info.Priority](#api-Task-Info-Priority)
     - [Task.Info.Status](#api-Task-Info-Status)
@@ -79,6 +84,22 @@
 
 
 
+<a name="api-TaskCreateResponse"></a>
+
+### TaskCreateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tasks | [Task](#api-Task) | repeated |  |
+| error | [string](#string) | optional |  |
+
+
+
+
+
+
 <a name="api-TaskDeleteRequest"></a>
 
 ### TaskDeleteRequest
@@ -94,6 +115,22 @@
 
 
 
+<a name="api-TaskDeleteResponse"></a>
+
+### TaskDeleteResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tasks | [Task](#api-Task) | repeated |  |
+| error | [string](#string) | optional |  |
+
+
+
+
+
+
 <a name="api-TaskGetRequest"></a>
 
 ### TaskGetRequest
@@ -103,6 +140,22 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | id | [string](#string) |  |  |
+
+
+
+
+
+
+<a name="api-TaskGetResponse"></a>
+
+### TaskGetResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task | [Task](#api-Task) |  |  |
+| error | [string](#string) | optional |  |
 
 
 
@@ -128,6 +181,38 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tasks | [Task](#api-Task) | repeated |  |
+| error | [string](#string) | optional |  |
+
+
+
+
+
+
+<a name="api-TaskUpdateRequest"></a>
+
+### TaskUpdateRequest
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| task | [Task](#api-Task) |  |  |
+
+
+
+
+
+
+<a name="api-TaskUpdateResponse"></a>
+
+### TaskUpdateResponse
+
+
+
+| Field | Type | Label | Description |
+| ----- | ---- | ----- | ----------- |
+| tasks | [Task](#api-Task) | repeated |  |
+| error | [string](#string) | optional |  |
 
 
 
@@ -176,10 +261,10 @@
 | Method Name | Request Type | Response Type | Description |
 | ----------- | ------------ | ------------- | ------------|
 | List | [TaskListRequest](#api-TaskListRequest) | [TaskListResponse](#api-TaskListResponse) |  |
-| Get | [TaskGetRequest](#api-TaskGetRequest) | [Task](#api-Task) |  |
-| Create | [TaskCreateRequest](#api-TaskCreateRequest) | [TaskListResponse](#api-TaskListResponse) |  |
-| Update | [Task](#api-Task) | [TaskListResponse](#api-TaskListResponse) |  |
-| Delete | [TaskDeleteRequest](#api-TaskDeleteRequest) | [TaskListResponse](#api-TaskListResponse) |  |
+| Get | [TaskGetRequest](#api-TaskGetRequest) | [TaskGetResponse](#api-TaskGetResponse) |  |
+| Create | [TaskCreateRequest](#api-TaskCreateRequest) | [TaskCreateResponse](#api-TaskCreateResponse) |  |
+| Update | [TaskUpdateRequest](#api-TaskUpdateRequest) | [TaskUpdateResponse](#api-TaskUpdateResponse) |  |
+| Delete | [TaskDeleteRequest](#api-TaskDeleteRequest) | [TaskDeleteResponse](#api-TaskDeleteResponse) |  |
 
  
 
