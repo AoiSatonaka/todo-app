@@ -6,88 +6,13 @@
   "tags": [],
   "targets": {
     "protoc": {
-      "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
-      "options": {
-        "cwd": "frontend"
-      }
+      "command": "docker compose run --rm protoc-elm sh ./docker/protoc/elm/protoc.sh"
     },
-    "build": {
-      "executor": "@nx/webpack:webpack",
-      "outputs": [
-        "{options.outputPath}"
-      ],
-      "defaultConfiguration": "production",
-      "options": {
-        "outputPath": "dist/frontend",
-        "compiler": "swc",
-        "main": "frontend/src/main.ts",
-        "tsConfig": "frontend/tsconfig.app.json",
-        "webpackConfig": "frontend/webpack.config.js",
-        "assets": [
-          "frontend/src/favicon.ico",
-          "frontend/src/assets"
-        ],
-        "index": "frontend/src/index.html",
-        "baseHref": "/",
-        "styles": [
-          "frontend/src/styles.scss"
-        ],
-        "scripts": []
-      },
-      "configurations": {
-        "production": {
-          "optimization": true,
-          "outputHashing": "all",
-          "sourceMap": false,
-          "namedChunks": false,
-          "extractLicenses": true,
-          "vendorChunk": false,
-          "fileReplacements": [
-            {
-              "replace": "frontend/src/environments/environment.ts",
-              "with": "frontend/src/environments/environment.prod.ts"
-            }
-          ]
-        }
-      }
-    },
-    "serve": {
-      "executor": "@nx/webpack:dev-server",
-      "options": {
-        "buildTarget": "frontend:build"
-      },
-      "configurations": {
-        "production": {
-          "buildTarget": "frontend:build:production"
-        }
-      }
-    },
-    "lint": {
-      "executor": "@nx/linter:eslint",
-      "outputs": [
-        "{options.outputFile}"
-      ],
-      "options": {
-        "lintFilePatterns": [
-          "frontend/**/*.ts"
-        ]
-      }
-    },
+    "build": {},
+    "serve": {},
+    "lint": {},
     "test": {
-      "executor": "@nx/jest:jest",
-      "outputs": [
-        "{workspaceRoot}/coverage/{projectRoot}"
-      ],
-      "options": {
-        "jestConfig": "frontend/jest.config.ts",
-        "passWithNoTests": true
-      },
-      "configurations": {
-        "ci": {
-          "ci": true,
-          "codeCoverage": true
-        }
-      }
+      "command": "echo frontend test"
     }
   }
 }

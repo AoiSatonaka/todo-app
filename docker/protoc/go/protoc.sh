@@ -1,12 +1,14 @@
 #!/bin/sh
 
-proto_file_dir='../api'
-api_proto_files=$(find ${proto_file_dir} -type f -name '*.proto')
-proto_out_dir='./internal/presentation/grpc'
+proto_file_dir='./api'
+proto_out_dir='./backend/internal/presentation/grpc'
 
-# change working directory
+# move to project root directory
 cd $(dirname $0)
-cd ..
+cd ../../../
+
+# search protofiles
+api_proto_files=$(find ${proto_file_dir} -type f -name '*.proto')
 
 # out dir exists check
 if [ ! -d $proto_out_dir ]; then

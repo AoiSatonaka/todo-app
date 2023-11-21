@@ -9,4 +9,4 @@ COPY ../../../../go.mod ${PROJECT_ROOT}
 COPY ../../../../go.sum ${PROJECT_ROOT}
 RUN go mod download
 
-CMD ["air", "-c", ".air.toml"]
+CMD ["air", "-c", "./backend/.air.toml"]

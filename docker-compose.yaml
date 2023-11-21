@@ -1,0 +1,89 @@
+version: '3'
+
+services:
+  protoc-go:
+    build:
+      context: .
+      dockerfile: ./docker/protoc/go/Dockerfile
+    working_dir: /usr/src/
+    volumes:
+      - .:/usr/src/
+
+  protoc-elm:
+    build:
+      context: .
+      dockerfile: ./docker/protoc/elm/Dockerfile
+    working_dir: /usr/src/
+    volumes:
+      - .:/usr/src/
+
+  protoc-docs:
+    build:
+      context: .
+      dockerfile: ./docker/protoc/docs/Dockerfile
+    working_dir: /usr/src/
+    volumes:
+      - ./:/usr/src/
+
+  mongo:
+    image: mongo
+    restart: always
+    volumes:
+      - /data/db:/data/db
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: passwd
+    networks:
+      - default
+    profiles:
+      - dev
+      - backend
+
+  mongo-admin:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: passwd
+      ME_CONFIG_MONGODB_URL: mongodb://root:passwd@mongo:27017
+    profiles:
+      - dev
+      - backend
+    depends_on:
+      - mongo
+
+  backend:
+    build:
+      context: .
+      dockerfile: ./backend/build/app/dev/Dockerfile
+    working_dir: /usr/src/
+    ports:
+      - 3000:3000
+    volumes:
+      - ./backend/:/usr/src/backend
+    networks:
+      - default
+    profiles:
+      - dev
+      - backend
+    depends_on:
+      - mongo
+
+  frontend:
+    build:
+      context: .
+      dockerfile: ./frontend/build/app/dev/Dockerfile
+    working_dir: /usr/src/
+    ports:
+      - 3000:8080
+    volumes:
+      - ./frontend/:/usr/src/frontend
+    networks:
+      - default
+    profiles:
+      - dev
+      - frontend

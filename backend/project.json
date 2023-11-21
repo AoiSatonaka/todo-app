@@ -5,24 +5,18 @@
   "sourceRoot": "./backend",
   "targets": {
     "protoc": {
-      "command": "docker compose run --rm --entrypoint sh protoc ./scripts/protoc.sh",
-      "options": {
-        "cwd": "backend"
-      }
+      "command": "docker compose run --rm protoc-go sh ./docker/protoc/go/protoc.sh"
     },
     "build": {
       "executor": "@nx-go/nx-go:build",
-      "dependsOn": [],
+      "dependsOn": ["protoc"],
       "options": {
         "outputPath": "dist/backend",
         "main": "backend/main.go"
       }
     },
     "serve": {
-      "executor": "@nx-go/nx-go:serve",
-      "options": {
-        "main": "backend/main.go"
-      }
+      "command": "docker compose up mongo mongo-admin app"
     },
     "test": {
       "executor": "@nx-go/nx-go:test"
