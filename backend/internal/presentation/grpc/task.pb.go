@@ -845,7 +845,7 @@ var file_task_proto_rawDesc = []byte{
 	0x53, 0x54, 0x41, 0x54, 0x55, 0x53, 0x5f, 0x54, 0x4f, 0x44, 0x4f, 0x10, 0x01, 0x12, 0x10, 0x0a,
 	0x0c, 0x53, 0x54, 0x41, 0x54, 0x55, 0x53, 0x5f, 0x44, 0x4f, 0x49, 0x4e, 0x47, 0x10, 0x02, 0x12,
 	0x0f, 0x0a, 0x0b, 0x53, 0x54, 0x41, 0x54, 0x55, 0x53, 0x5f, 0x44, 0x4f, 0x4e, 0x45, 0x10, 0x03,
-	0x32, 0xa5, 0x02, 0x0a, 0x0b, 0x54, 0x61, 0x73, 0x6b, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
+	0x32, 0xa5, 0x02, 0x0a, 0x0b, 0x54, 0x6f, 0x44, 0x6f, 0x53, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65,
 	0x12, 0x33, 0x0a, 0x04, 0x4c, 0x69, 0x73, 0x74, 0x12, 0x14, 0x2e, 0x61, 0x70, 0x69, 0x2e, 0x54,
 	0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x15,
 	0x2e, 0x61, 0x70, 0x69, 0x2e, 0x54, 0x61, 0x73, 0x6b, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73,
@@ -912,16 +912,16 @@ var file_task_proto_depIdxs = []int32{
 	14, // 8: api.Task.Info.limit:type_name -> google.protobuf.Timestamp
 	0,  // 9: api.Task.Info.priority:type_name -> api.Task.Info.Priority
 	1,  // 10: api.Task.Info.status:type_name -> api.Task.Info.Status
-	2,  // 11: api.TaskService.List:input_type -> api.TaskListRequest
-	4,  // 12: api.TaskService.Get:input_type -> api.TaskGetRequest
-	6,  // 13: api.TaskService.Create:input_type -> api.TaskCreateRequest
-	8,  // 14: api.TaskService.Update:input_type -> api.TaskUpdateRequest
-	10, // 15: api.TaskService.Delete:input_type -> api.TaskDeleteRequest
-	3,  // 16: api.TaskService.List:output_type -> api.TaskListResponse
-	5,  // 17: api.TaskService.Get:output_type -> api.TaskGetResponse
-	7,  // 18: api.TaskService.Create:output_type -> api.TaskCreateResponse
-	9,  // 19: api.TaskService.Update:output_type -> api.TaskUpdateResponse
-	11, // 20: api.TaskService.Delete:output_type -> api.TaskDeleteResponse
+	2,  // 11: api.ToDoService.List:input_type -> api.TaskListRequest
+	4,  // 12: api.ToDoService.Get:input_type -> api.TaskGetRequest
+	6,  // 13: api.ToDoService.Create:input_type -> api.TaskCreateRequest
+	8,  // 14: api.ToDoService.Update:input_type -> api.TaskUpdateRequest
+	10, // 15: api.ToDoService.Delete:input_type -> api.TaskDeleteRequest
+	3,  // 16: api.ToDoService.List:output_type -> api.TaskListResponse
+	5,  // 17: api.ToDoService.Get:output_type -> api.TaskGetResponse
+	7,  // 18: api.ToDoService.Create:output_type -> api.TaskCreateResponse
+	9,  // 19: api.ToDoService.Update:output_type -> api.TaskUpdateResponse
+	11, // 20: api.ToDoService.Delete:output_type -> api.TaskDeleteResponse
 	16, // [16:21] is the sub-list for method output_type
 	11, // [11:16] is the sub-list for method input_type
 	11, // [11:11] is the sub-list for extension type_name

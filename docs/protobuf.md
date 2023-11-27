@@ -20,7 +20,7 @@
     - [Task.Info.Priority](#api-Task-Info-Priority)
     - [Task.Info.Status](#api-Task-Info-Status)
   
-    - [TaskService](#api-TaskService)
+    - [ToDoService](#api-ToDoService)
   
 - [Scalar Value Types](#scalar-value-types)
 
@@ -253,9 +253,9 @@
  
 
 
-<a name="api-TaskService"></a>
+<a name="api-ToDoService"></a>
 
-### TaskService
+### ToDoService
 
 
 | Method Name | Request Type | Response Type | Description |

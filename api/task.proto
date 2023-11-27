@@ -6,7 +6,7 @@ package api;
 
 import "google/protobuf/timestamp.proto";
 
-service TaskService {
+service ToDoService {
   rpc List(TaskListRequest) returns (TaskListResponse);
   rpc Get(TaskGetRequest) returns (TaskGetResponse);
   rpc Create(TaskCreateRequest) returns (TaskCreateResponse);

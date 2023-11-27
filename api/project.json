@@ -5,7 +5,7 @@
   "sourceRoot": "./api",
   "targets": {
     "protoc": {
-      "command": "docker compose run --rm protoc-docs sh ./docker/protoc/docs/protoc.sh"
+      "command": "docker compose run --rm -u $(id -u $USER) protoc-docs sh ./docker/protoc/docs/protoc.sh"
     },
     "build": {},
     "serve": {},

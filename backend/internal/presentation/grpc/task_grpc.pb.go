@@ -19,17 +19,17 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	TaskService_List_FullMethodName   = "/api.TaskService/List"
-	TaskService_Get_FullMethodName    = "/api.TaskService/Get"
-	TaskService_Create_FullMethodName = "/api.TaskService/Create"
-	TaskService_Update_FullMethodName = "/api.TaskService/Update"
-	TaskService_Delete_FullMethodName = "/api.TaskService/Delete"
+	ToDoService_List_FullMethodName   = "/api.ToDoService/List"
+	ToDoService_Get_FullMethodName    = "/api.ToDoService/Get"
+	ToDoService_Create_FullMethodName = "/api.ToDoService/Create"
+	ToDoService_Update_FullMethodName = "/api.ToDoService/Update"
+	ToDoService_Delete_FullMethodName = "/api.ToDoService/Delete"
 )
 
-// TaskServiceClient is the client API for TaskService service.
+// ToDoServiceClient is the client API for ToDoService service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type TaskServiceClient interface {
+type ToDoServiceClient interface {
 	List(ctx context.Context, in *TaskListRequest, opts ...grpc.CallOption) (*TaskListResponse, error)
 	Get(ctx context.Context, in *TaskGetRequest, opts ...grpc.CallOption) (*TaskGetResponse, error)
 	Create(ctx context.Context, in *TaskCreateRequest, opts ...grpc.CallOption) (*TaskCreateResponse, error)
@@ -37,219 +37,219 @@ type TaskServiceClient interface {
 	Delete(ctx context.Context, in *TaskDeleteRequest, opts ...grpc.CallOption) (*TaskDeleteResponse, error)
 }
 
-type taskServiceClient struct {
+type toDoServiceClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewTaskServiceClient(cc grpc.ClientConnInterface) TaskServiceClient {
-	return &taskServiceClient{cc}
+func NewToDoServiceClient(cc grpc.ClientConnInterface) ToDoServiceClient {
+	return &toDoServiceClient{cc}
 }
 
-func (c *taskServiceClient) List(ctx context.Context, in *TaskListRequest, opts ...grpc.CallOption) (*TaskListResponse, error) {
+func (c *toDoServiceClient) List(ctx context.Context, in *TaskListRequest, opts ...grpc.CallOption) (*TaskListResponse, error) {
 	out := new(TaskListResponse)
-	err := c.cc.Invoke(ctx, TaskService_List_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ToDoService_List_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *taskServiceClient) Get(ctx context.Context, in *TaskGetRequest, opts ...grpc.CallOption) (*TaskGetResponse, error) {
+func (c *toDoServiceClient) Get(ctx context.Context, in *TaskGetRequest, opts ...grpc.CallOption) (*TaskGetResponse, error) {
 	out := new(TaskGetResponse)
-	err := c.cc.Invoke(ctx, TaskService_Get_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ToDoService_Get_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *taskServiceClient) Create(ctx context.Context, in *TaskCreateRequest, opts ...grpc.CallOption) (*TaskCreateResponse, error) {
+func (c *toDoServiceClient) Create(ctx context.Context, in *TaskCreateRequest, opts ...grpc.CallOption) (*TaskCreateResponse, error) {
 	out := new(TaskCreateResponse)
-	err := c.cc.Invoke(ctx, TaskService_Create_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ToDoService_Create_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *taskServiceClient) Update(ctx context.Context, in *TaskUpdateRequest, opts ...grpc.CallOption) (*TaskUpdateResponse, error) {
+func (c *toDoServiceClient) Update(ctx context.Context, in *TaskUpdateRequest, opts ...grpc.CallOption) (*TaskUpdateResponse, error) {
 	out := new(TaskUpdateResponse)
-	err := c.cc.Invoke(ctx, TaskService_Update_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ToDoService_Update_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *taskServiceClient) Delete(ctx context.Context, in *TaskDeleteRequest, opts ...grpc.CallOption) (*TaskDeleteResponse, error) {
+func (c *toDoServiceClient) Delete(ctx context.Context, in *TaskDeleteRequest, opts ...grpc.CallOption) (*TaskDeleteResponse, error) {
 	out := new(TaskDeleteResponse)
-	err := c.cc.Invoke(ctx, TaskService_Delete_FullMethodName, in, out, opts...)
+	err := c.cc.Invoke(ctx, ToDoService_Delete_FullMethodName, in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// TaskServiceServer is the server API for TaskService service.
-// All implementations must embed UnimplementedTaskServiceServer
+// ToDoServiceServer is the server API for ToDoService service.
+// All implementations must embed UnimplementedToDoServiceServer
 // for forward compatibility
-type TaskServiceServer interface {
+type ToDoServiceServer interface {
 	List(context.Context, *TaskListRequest) (*TaskListResponse, error)
 	Get(context.Context, *TaskGetRequest) (*TaskGetResponse, error)
 	Create(context.Context, *TaskCreateRequest) (*TaskCreateResponse, error)
 	Update(context.Context, *TaskUpdateRequest) (*TaskUpdateResponse, error)
 	Delete(context.Context, *TaskDeleteRequest) (*TaskDeleteResponse, error)
-	mustEmbedUnimplementedTaskServiceServer()
+	mustEmbedUnimplementedToDoServiceServer()
 }
 
-// UnimplementedTaskServiceServer must be embedded to have forward compatible implementations.
-type UnimplementedTaskServiceServer struct {
+// UnimplementedToDoServiceServer must be embedded to have forward compatible implementations.
+type UnimplementedToDoServiceServer struct {
 }
 
-func (UnimplementedTaskServiceServer) List(context.Context, *TaskListRequest) (*TaskListResponse, error) {
+func (UnimplementedToDoServiceServer) List(context.Context, *TaskListRequest) (*TaskListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method List not implemented")
 }
-func (UnimplementedTaskServiceServer) Get(context.Context, *TaskGetRequest) (*TaskGetResponse, error) {
+func (UnimplementedToDoServiceServer) Get(context.Context, *TaskGetRequest) (*TaskGetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
-func (UnimplementedTaskServiceServer) Create(context.Context, *TaskCreateRequest) (*TaskCreateResponse, error) {
+func (UnimplementedToDoServiceServer) Create(context.Context, *TaskCreateRequest) (*TaskCreateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedTaskServiceServer) Update(context.Context, *TaskUpdateRequest) (*TaskUpdateResponse, error) {
+func (UnimplementedToDoServiceServer) Update(context.Context, *TaskUpdateRequest) (*TaskUpdateResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedTaskServiceServer) Delete(context.Context, *TaskDeleteRequest) (*TaskDeleteResponse, error) {
+func (UnimplementedToDoServiceServer) Delete(context.Context, *TaskDeleteRequest) (*TaskDeleteResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Delete not implemented")
 }
-func (UnimplementedTaskServiceServer) mustEmbedUnimplementedTaskServiceServer() {}
+func (UnimplementedToDoServiceServer) mustEmbedUnimplementedToDoServiceServer() {}
 
-// UnsafeTaskServiceServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to TaskServiceServer will
+// UnsafeToDoServiceServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ToDoServiceServer will
 // result in compilation errors.
-type UnsafeTaskServiceServer interface {
-	mustEmbedUnimplementedTaskServiceServer()
+type UnsafeToDoServiceServer interface {
+	mustEmbedUnimplementedToDoServiceServer()
 }
 
-func RegisterTaskServiceServer(s grpc.ServiceRegistrar, srv TaskServiceServer) {
-	s.RegisterService(&TaskService_ServiceDesc, srv)
+func RegisterToDoServiceServer(s grpc.ServiceRegistrar, srv ToDoServiceServer) {
+	s.RegisterService(&ToDoService_ServiceDesc, srv)
 }
 
-func _TaskService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ToDoService_List_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskListRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServiceServer).List(ctx, in)
+		return srv.(ToDoServiceServer).List(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TaskService_List_FullMethodName,
+		FullMethod: ToDoService_List_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).List(ctx, req.(*TaskListRequest))
+		return srv.(ToDoServiceServer).List(ctx, req.(*TaskListRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TaskService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ToDoService_Get_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskGetRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServiceServer).Get(ctx, in)
+		return srv.(ToDoServiceServer).Get(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TaskService_Get_FullMethodName,
+		FullMethod: ToDoService_Get_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).Get(ctx, req.(*TaskGetRequest))
+		return srv.(ToDoServiceServer).Get(ctx, req.(*TaskGetRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TaskService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ToDoService_Create_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskCreateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServiceServer).Create(ctx, in)
+		return srv.(ToDoServiceServer).Create(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TaskService_Create_FullMethodName,
+		FullMethod: ToDoService_Create_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).Create(ctx, req.(*TaskCreateRequest))
+		return srv.(ToDoServiceServer).Create(ctx, req.(*TaskCreateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TaskService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ToDoService_Update_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskUpdateRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServiceServer).Update(ctx, in)
+		return srv.(ToDoServiceServer).Update(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TaskService_Update_FullMethodName,
+		FullMethod: ToDoService_Update_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).Update(ctx, req.(*TaskUpdateRequest))
+		return srv.(ToDoServiceServer).Update(ctx, req.(*TaskUpdateRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _TaskService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ToDoService_Delete_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(TaskDeleteRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(TaskServiceServer).Delete(ctx, in)
+		return srv.(ToDoServiceServer).Delete(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: TaskService_Delete_FullMethodName,
+		FullMethod: ToDoService_Delete_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(TaskServiceServer).Delete(ctx, req.(*TaskDeleteRequest))
+		return srv.(ToDoServiceServer).Delete(ctx, req.(*TaskDeleteRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// TaskService_ServiceDesc is the grpc.ServiceDesc for TaskService service.
+// ToDoService_ServiceDesc is the grpc.ServiceDesc for ToDoService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var TaskService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "api.TaskService",
-	HandlerType: (*TaskServiceServer)(nil),
+var ToDoService_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "api.ToDoService",
+	HandlerType: (*ToDoServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "List",
-			Handler:    _TaskService_List_Handler,
+			Handler:    _ToDoService_List_Handler,
 		},
 		{
 			MethodName: "Get",
-			Handler:    _TaskService_Get_Handler,
+			Handler:    _ToDoService_Get_Handler,
 		},
 		{
 			MethodName: "Create",
-			Handler:    _TaskService_Create_Handler,
+			Handler:    _ToDoService_Create_Handler,
 		},
 		{
 			MethodName: "Update",
-			Handler:    _TaskService_Update_Handler,
+			Handler:    _ToDoService_Update_Handler,
 		},
 		{
 			MethodName: "Delete",
-			Handler:    _TaskService_Delete_Handler,
+			Handler:    _ToDoService_Delete_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
