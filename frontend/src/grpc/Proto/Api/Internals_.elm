@@ -154,9 +154,9 @@ type alias Proto__Api__Task =
 
 
 -}
-fieldNumbersProto__Api__TaskDeleteResponse : { tasks : Int, error : Int }
+fieldNumbersProto__Api__TaskDeleteResponse : { tasks : Int }
 fieldNumbersProto__Api__TaskDeleteResponse =
-    { tasks = 1, error = 2 }
+    { tasks = 1 }
 
 
 {-| Default for Proto__Api__TaskDeleteResponse. Should only be used for 'required' decoders as an initial value.
@@ -165,7 +165,7 @@ fieldNumbersProto__Api__TaskDeleteResponse =
 -}
 defaultProto__Api__TaskDeleteResponse : Proto__Api__TaskDeleteResponse
 defaultProto__Api__TaskDeleteResponse =
-    { tasks = [], error = Nothing }
+    { tasks = [] }
 
 
 {-| Declares how to decode a `Proto__Api__TaskDeleteResponse` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
@@ -176,9 +176,7 @@ decodeProto__Api__TaskDeleteResponse : Protobuf.Decode.Decoder Proto__Api__TaskD
 decodeProto__Api__TaskDeleteResponse =
     Protobuf.Decode.message
         defaultProto__Api__TaskDeleteResponse
-        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a })
-        , Protobuf.Decode.optional 2 (Protobuf.Decode.map Just Protobuf.Decode.string) (\a r -> { r | error = a })
-        ]
+        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a }) ]
 
 
 {-| Declares how to encode a `Proto__Api__TaskDeleteResponse` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
@@ -187,10 +185,7 @@ decodeProto__Api__TaskDeleteResponse =
 -}
 encodeProto__Api__TaskDeleteResponse : Proto__Api__TaskDeleteResponse -> Protobuf.Encode.Encoder
 encodeProto__Api__TaskDeleteResponse value =
-    Protobuf.Encode.message
-        [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks )
-        , ( 2, (Maybe.map Protobuf.Encode.string >> Maybe.withDefault Protobuf.Encode.none) value.error )
-        ]
+    Protobuf.Encode.message [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks ) ]
 
 
 {-| `Proto__Api__TaskDeleteResponse` message
@@ -198,7 +193,7 @@ encodeProto__Api__TaskDeleteResponse value =
 
 -}
 type alias Proto__Api__TaskDeleteResponse =
-    { tasks : List Proto__Api__Task, error : Maybe String }
+    { tasks : List Proto__Api__Task }
 
 
 {-| The field numbers for the fields of `Proto__Api__TaskDeleteRequest`. This is mostly useful for internals, like documentation generation.
@@ -251,9 +246,9 @@ type alias Proto__Api__TaskDeleteRequest =
 
 
 -}
-fieldNumbersProto__Api__TaskUpdateResponse : { tasks : Int, error : Int }
+fieldNumbersProto__Api__TaskUpdateResponse : { tasks : Int }
 fieldNumbersProto__Api__TaskUpdateResponse =
-    { tasks = 1, error = 2 }
+    { tasks = 1 }
 
 
 {-| Default for Proto__Api__TaskUpdateResponse. Should only be used for 'required' decoders as an initial value.
@@ -262,7 +257,7 @@ fieldNumbersProto__Api__TaskUpdateResponse =
 -}
 defaultProto__Api__TaskUpdateResponse : Proto__Api__TaskUpdateResponse
 defaultProto__Api__TaskUpdateResponse =
-    { tasks = [], error = Nothing }
+    { tasks = [] }
 
 
 {-| Declares how to decode a `Proto__Api__TaskUpdateResponse` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
@@ -273,9 +268,7 @@ decodeProto__Api__TaskUpdateResponse : Protobuf.Decode.Decoder Proto__Api__TaskU
 decodeProto__Api__TaskUpdateResponse =
     Protobuf.Decode.message
         defaultProto__Api__TaskUpdateResponse
-        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a })
-        , Protobuf.Decode.optional 2 (Protobuf.Decode.map Just Protobuf.Decode.string) (\a r -> { r | error = a })
-        ]
+        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a }) ]
 
 
 {-| Declares how to encode a `Proto__Api__TaskUpdateResponse` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
@@ -284,10 +277,7 @@ decodeProto__Api__TaskUpdateResponse =
 -}
 encodeProto__Api__TaskUpdateResponse : Proto__Api__TaskUpdateResponse -> Protobuf.Encode.Encoder
 encodeProto__Api__TaskUpdateResponse value =
-    Protobuf.Encode.message
-        [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks )
-        , ( 2, (Maybe.map Protobuf.Encode.string >> Maybe.withDefault Protobuf.Encode.none) value.error )
-        ]
+    Protobuf.Encode.message [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks ) ]
 
 
 {-| `Proto__Api__TaskUpdateResponse` message
@@ -295,7 +285,7 @@ encodeProto__Api__TaskUpdateResponse value =
 
 -}
 type alias Proto__Api__TaskUpdateResponse =
-    { tasks : List Proto__Api__Task, error : Maybe String }
+    { tasks : List Proto__Api__Task }
 
 
 {-| The field numbers for the fields of `Proto__Api__TaskUpdateRequest`. This is mostly useful for internals, like documentation generation.
@@ -349,9 +339,9 @@ type alias Proto__Api__TaskUpdateRequest =
 
 
 -}
-fieldNumbersProto__Api__TaskCreateResponse : { tasks : Int, error : Int }
+fieldNumbersProto__Api__TaskCreateResponse : { tasks : Int }
 fieldNumbersProto__Api__TaskCreateResponse =
-    { tasks = 1, error = 2 }
+    { tasks = 1 }
 
 
 {-| Default for Proto__Api__TaskCreateResponse. Should only be used for 'required' decoders as an initial value.
@@ -360,7 +350,7 @@ fieldNumbersProto__Api__TaskCreateResponse =
 -}
 defaultProto__Api__TaskCreateResponse : Proto__Api__TaskCreateResponse
 defaultProto__Api__TaskCreateResponse =
-    { tasks = [], error = Nothing }
+    { tasks = [] }
 
 
 {-| Declares how to decode a `Proto__Api__TaskCreateResponse` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
@@ -371,9 +361,7 @@ decodeProto__Api__TaskCreateResponse : Protobuf.Decode.Decoder Proto__Api__TaskC
 decodeProto__Api__TaskCreateResponse =
     Protobuf.Decode.message
         defaultProto__Api__TaskCreateResponse
-        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a })
-        , Protobuf.Decode.optional 2 (Protobuf.Decode.map Just Protobuf.Decode.string) (\a r -> { r | error = a })
-        ]
+        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a }) ]
 
 
 {-| Declares how to encode a `Proto__Api__TaskCreateResponse` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
@@ -382,10 +370,7 @@ decodeProto__Api__TaskCreateResponse =
 -}
 encodeProto__Api__TaskCreateResponse : Proto__Api__TaskCreateResponse -> Protobuf.Encode.Encoder
 encodeProto__Api__TaskCreateResponse value =
-    Protobuf.Encode.message
-        [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks )
-        , ( 2, (Maybe.map Protobuf.Encode.string >> Maybe.withDefault Protobuf.Encode.none) value.error )
-        ]
+    Protobuf.Encode.message [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks ) ]
 
 
 {-| `Proto__Api__TaskCreateResponse` message
@@ -393,7 +378,7 @@ encodeProto__Api__TaskCreateResponse value =
 
 -}
 type alias Proto__Api__TaskCreateResponse =
-    { tasks : List Proto__Api__Task, error : Maybe String }
+    { tasks : List Proto__Api__Task }
 
 
 {-| The field numbers for the fields of `Proto__Api__TaskCreateRequest`. This is mostly useful for internals, like documentation generation.
@@ -448,9 +433,9 @@ type alias Proto__Api__TaskCreateRequest =
 
 
 -}
-fieldNumbersProto__Api__TaskGetResponse : { task : Int, error : Int }
+fieldNumbersProto__Api__TaskGetResponse : { task : Int }
 fieldNumbersProto__Api__TaskGetResponse =
-    { task = 1, error = 2 }
+    { task = 1 }
 
 
 {-| Default for Proto__Api__TaskGetResponse. Should only be used for 'required' decoders as an initial value.
@@ -459,7 +444,7 @@ fieldNumbersProto__Api__TaskGetResponse =
 -}
 defaultProto__Api__TaskGetResponse : Proto__Api__TaskGetResponse
 defaultProto__Api__TaskGetResponse =
-    { task = Nothing, error = Nothing }
+    { task = Nothing }
 
 
 {-| Declares how to decode a `Proto__Api__TaskGetResponse` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
@@ -470,9 +455,7 @@ decodeProto__Api__TaskGetResponse : Protobuf.Decode.Decoder Proto__Api__TaskGetR
 decodeProto__Api__TaskGetResponse =
     Protobuf.Decode.message
         defaultProto__Api__TaskGetResponse
-        [ Protobuf.Decode.optional 1 (Protobuf.Decode.map Just decodeProto__Api__Task) (\a r -> { r | task = a })
-        , Protobuf.Decode.optional 2 (Protobuf.Decode.map Just Protobuf.Decode.string) (\a r -> { r | error = a })
-        ]
+        [ Protobuf.Decode.optional 1 (Protobuf.Decode.map Just decodeProto__Api__Task) (\a r -> { r | task = a }) ]
 
 
 {-| Declares how to encode a `Proto__Api__TaskGetResponse` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
@@ -482,9 +465,7 @@ decodeProto__Api__TaskGetResponse =
 encodeProto__Api__TaskGetResponse : Proto__Api__TaskGetResponse -> Protobuf.Encode.Encoder
 encodeProto__Api__TaskGetResponse value =
     Protobuf.Encode.message
-        [ ( 1, (Maybe.map encodeProto__Api__Task >> Maybe.withDefault Protobuf.Encode.none) value.task )
-        , ( 2, (Maybe.map Protobuf.Encode.string >> Maybe.withDefault Protobuf.Encode.none) value.error )
-        ]
+        [ ( 1, (Maybe.map encodeProto__Api__Task >> Maybe.withDefault Protobuf.Encode.none) value.task ) ]
 
 
 {-| `Proto__Api__TaskGetResponse` message
@@ -492,7 +473,7 @@ encodeProto__Api__TaskGetResponse value =
 
 -}
 type alias Proto__Api__TaskGetResponse =
-    { task : Maybe Proto__Api__Task, error : Maybe String }
+    { task : Maybe Proto__Api__Task }
 
 
 {-| The field numbers for the fields of `Proto__Api__TaskGetRequest`. This is mostly useful for internals, like documentation generation.
@@ -545,9 +526,9 @@ type alias Proto__Api__TaskGetRequest =
 
 
 -}
-fieldNumbersProto__Api__TaskListResponse : { tasks : Int, error : Int }
+fieldNumbersProto__Api__TaskListResponse : { tasks : Int }
 fieldNumbersProto__Api__TaskListResponse =
-    { tasks = 1, error = 2 }
+    { tasks = 1 }
 
 
 {-| Default for Proto__Api__TaskListResponse. Should only be used for 'required' decoders as an initial value.
@@ -556,7 +537,7 @@ fieldNumbersProto__Api__TaskListResponse =
 -}
 defaultProto__Api__TaskListResponse : Proto__Api__TaskListResponse
 defaultProto__Api__TaskListResponse =
-    { tasks = [], error = Nothing }
+    { tasks = [] }
 
 
 {-| Declares how to decode a `Proto__Api__TaskListResponse` from Bytes. To actually perform the conversion from Bytes, you need to use Protobuf.Decode.decode from eriktim/elm-protocol-buffers.
@@ -567,9 +548,7 @@ decodeProto__Api__TaskListResponse : Protobuf.Decode.Decoder Proto__Api__TaskLis
 decodeProto__Api__TaskListResponse =
     Protobuf.Decode.message
         defaultProto__Api__TaskListResponse
-        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a })
-        , Protobuf.Decode.optional 2 (Protobuf.Decode.map Just Protobuf.Decode.string) (\a r -> { r | error = a })
-        ]
+        [ Protobuf.Decode.repeated 1 decodeProto__Api__Task .tasks (\a r -> { r | tasks = a }) ]
 
 
 {-| Declares how to encode a `Proto__Api__TaskListResponse` to Bytes. To actually perform the conversion to Bytes, you need to use Protobuf.Encode.encode from eriktim/elm-protocol-buffers.
@@ -578,10 +557,7 @@ decodeProto__Api__TaskListResponse =
 -}
 encodeProto__Api__TaskListResponse : Proto__Api__TaskListResponse -> Protobuf.Encode.Encoder
 encodeProto__Api__TaskListResponse value =
-    Protobuf.Encode.message
-        [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks )
-        , ( 2, (Maybe.map Protobuf.Encode.string >> Maybe.withDefault Protobuf.Encode.none) value.error )
-        ]
+    Protobuf.Encode.message [ ( 1, Protobuf.Encode.list encodeProto__Api__Task value.tasks ) ]
 
 
 {-| `Proto__Api__TaskListResponse` message
@@ -589,7 +565,7 @@ encodeProto__Api__TaskListResponse value =
 
 -}
 type alias Proto__Api__TaskListResponse =
-    { tasks : List Proto__Api__Task, error : Maybe String }
+    { tasks : List Proto__Api__Task }
 
 
 {-| The field numbers for the fields of `Proto__Api__TaskListRequest`. This is mostly useful for internals, like documentation generation.

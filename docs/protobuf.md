@@ -93,7 +93,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tasks | [Task](#api-Task) | repeated |  |
-| error | [string](#string) | optional |  |
 
 
 
@@ -124,7 +123,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tasks | [Task](#api-Task) | repeated |  |
-| error | [string](#string) | optional |  |
 
 
 
@@ -155,7 +153,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | task | [Task](#api-Task) |  |  |
-| error | [string](#string) | optional |  |
 
 
 
@@ -181,7 +178,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tasks | [Task](#api-Task) | repeated |  |
-| error | [string](#string) | optional |  |
 
 
 
@@ -212,7 +208,6 @@
 | Field | Type | Label | Description |
 | ----- | ---- | ----- | ----------- |
 | tasks | [Task](#api-Task) | repeated |  |
-| error | [string](#string) | optional |  |
 
 
 

@@ -17,7 +17,6 @@ service ToDoService {
 message TaskListRequest {}
 message TaskListResponse {
   repeated Task tasks = 1;
-  optional string error = 2;
 }
 
 message TaskGetRequest {
@@ -25,7 +24,6 @@ message TaskGetRequest {
 }
 message TaskGetResponse {
   Task task = 1;
-  optional string error = 2;
 }
 
 message TaskCreateRequest {
@@ -33,7 +31,6 @@ message TaskCreateRequest {
 }
 message TaskCreateResponse {
   repeated Task tasks = 1;
-  optional string error = 2;
 }
 
 message TaskUpdateRequest {
@@ -41,7 +38,6 @@ message TaskUpdateRequest {
 }
 message TaskUpdateResponse {
   repeated Task tasks = 1;
-  optional string error = 2;
 }
 
 message TaskDeleteRequest {
@@ -49,7 +45,6 @@ message TaskDeleteRequest {
 }
 message TaskDeleteResponse {
   repeated Task tasks = 1;
-  optional string error = 2;
 }
 
 message Task {

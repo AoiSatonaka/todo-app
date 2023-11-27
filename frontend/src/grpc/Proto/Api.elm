@@ -77,7 +77,7 @@ type alias Task =
 
 
 -}
-fieldNumbersTaskDeleteResponse : { tasks : Int, error : Int }
+fieldNumbersTaskDeleteResponse : { tasks : Int }
 fieldNumbersTaskDeleteResponse =
     Proto.Api.Internals_.fieldNumbersProto__Api__TaskDeleteResponse
 
@@ -165,7 +165,7 @@ type alias TaskDeleteRequest =
 
 
 -}
-fieldNumbersTaskUpdateResponse : { tasks : Int, error : Int }
+fieldNumbersTaskUpdateResponse : { tasks : Int }
 fieldNumbersTaskUpdateResponse =
     Proto.Api.Internals_.fieldNumbersProto__Api__TaskUpdateResponse
 
@@ -253,7 +253,7 @@ type alias TaskUpdateRequest =
 
 
 -}
-fieldNumbersTaskCreateResponse : { tasks : Int, error : Int }
+fieldNumbersTaskCreateResponse : { tasks : Int }
 fieldNumbersTaskCreateResponse =
     Proto.Api.Internals_.fieldNumbersProto__Api__TaskCreateResponse
 
@@ -341,7 +341,7 @@ type alias TaskCreateRequest =
 
 
 -}
-fieldNumbersTaskGetResponse : { task : Int, error : Int }
+fieldNumbersTaskGetResponse : { task : Int }
 fieldNumbersTaskGetResponse =
     Proto.Api.Internals_.fieldNumbersProto__Api__TaskGetResponse
 
@@ -429,7 +429,7 @@ type alias TaskGetRequest =
 
 
 -}
-fieldNumbersTaskListResponse : { tasks : Int, error : Int }
+fieldNumbersTaskListResponse : { tasks : Int }
 fieldNumbersTaskListResponse =
     Proto.Api.Internals_.fieldNumbersProto__Api__TaskListResponse
 
