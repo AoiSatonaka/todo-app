@@ -1,7 +1,7 @@
 #!/bin/sh
 
 proto_file_dir='./api'
-proto_out_dir='./backend/internal/presentation/grpc'
+proto_out_dir='./backend/internal/presentation/grpc/protobuf'
 
 # move to project root directory
 cd $(dirname $0)
