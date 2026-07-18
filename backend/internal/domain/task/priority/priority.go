@@ -2,7 +2,7 @@ package priority
 
 import "fmt"
 
-type Priority int
+type Priority int32
 
 const (
 	_ Priority = iota

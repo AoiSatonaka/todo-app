@@ -8,6 +8,8 @@ services:
     working_dir: /usr/src/
     volumes:
       - .:/usr/src/
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
 
   protoc-elm:
     build:
@@ -16,6 +18,8 @@ services:
     working_dir: /usr/src/
     volumes:
       - .:/usr/src/
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
 
   protoc-docs:
     build:
@@ -24,12 +28,14 @@ services:
     working_dir: /usr/src/
     volumes:
       - ./:/usr/src/
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
 
   mongo:
     image: mongo
     restart: always
     volumes:
-      - /data/db:/data/db
+      - ./data/db:/data/db
     ports:
       - 27017:27017
     environment:
@@ -59,7 +65,7 @@ services:
   backend:
     build:
       context: .
-      dockerfile: ./backend/build/app/dev/Dockerfile
+      dockerfile: ./docker/app/backend/dev/Dockerfile
     working_dir: /usr/src/
     ports:
       - 3000:3000
@@ -76,14 +82,44 @@ services:
   frontend:
     build:
       context: .
-      dockerfile: ./frontend/build/app/dev/Dockerfile
+      dockerfile: ./docker/app/frontend/dev/Dockerfile
     working_dir: /usr/src/
     ports:
-      - 3000:8080
+      - 3000:8888
     volumes:
       - ./frontend/:/usr/src/frontend
     networks:
       - default
     profiles:
       - dev
+      - frontend
+
+  auth-emulator:
+    build:
+      context: .
+      dockerfile: ./docker/firebase/Dockerfile
+    working_dir: /usr/firebase
+    ports:
+      # Emulator Posts
+      - 9099:9099 # Authentication
+      - 4000:4000 # UI
+      - 5001:5001 # Functions
+      - 9299:9299 # Eventarc
+      - 9000:9000 # Realtime Database
+      - 8080:8080 # Firestore
+      - 9199:9199 # Storage
+      - 5000:5000 # Hosting
+      - 8085:8085 # Pub/Sub
+    environment:
+      GCLOUD_PROJECT: todo-app-ad242
+    volumes:
+      - ./firebase:/usr/firebase
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    command: firebase emulators:start --only auth --import ./data --export-on-exit
+    networks:
+      - default
+    profiles:
+      - dev
+      - backend
       - frontend

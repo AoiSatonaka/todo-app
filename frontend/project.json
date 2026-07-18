@@ -6,7 +6,7 @@
   "tags": [],
   "targets": {
     "protoc": {
-      "command": "docker compose run --rm protoc-elm sh ./docker/protoc/elm/protoc.sh"
+      "command": "docker compose run --rm -u $(id -u $USER) protoc-elm sh ./docker/protoc/elm/protoc.sh"
     },
     "build": {},
     "serve": {},

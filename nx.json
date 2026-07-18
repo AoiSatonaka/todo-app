@@ -16,6 +16,9 @@
         "{workspaceRoot}/.eslintignore",
         "{workspaceRoot}/eslint.config.js"
       ]
+    },
+    "serve": {
+      "command": "docker compose --profile dev up"
     }
   },
   "tasksRunnerOptions": {
@@ -32,12 +35,5 @@
   "installation": {
     "version": "16.10.0"
   },
-  "generators": {
-    "@nx/web:application": {
-      "style": "scss",
-      "linter": "eslint",
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "none"
-    }
-  }
+  "generators": {}
 }

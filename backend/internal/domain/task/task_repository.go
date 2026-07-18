@@ -1,9 +1,9 @@
 package task
 
 type ITaskRepository interface {
-	List() (*[]Task, error)
-	FindById(int32) (*Task, error)
-	Create(*Task) (*[]Task, error)
-	Update(*Task) (*[]Task, error)
-	Delete(int32) (*[]Task, error)
+	List(string) (*[]Task, error)
+	FindById(string, string) (*Task, error)
+	Create(*Task, string) error
+	Update(*Task, string) error
+	Delete(string, string) error
 }

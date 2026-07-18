@@ -5,7 +5,7 @@
   "sourceRoot": "./backend",
   "targets": {
     "protoc": {
-      "command": "docker compose run --rm protoc-go sh ./docker/protoc/go/protoc.sh"
+      "command": "docker compose run --rm -u $(id -u $USER) protoc-go sh ./docker/protoc/go/protoc.sh"
     },
     "build": {
       "executor": "@nx-go/nx-go:build",
@@ -16,7 +16,7 @@
       }
     },
     "serve": {
-      "command": "docker compose up mongo mongo-admin app"
+      "command": "docker compose --profile backend up -d"
     },
     "test": {
       "executor": "@nx-go/nx-go:test"
